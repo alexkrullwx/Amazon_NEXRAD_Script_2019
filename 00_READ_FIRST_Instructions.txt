@@ -1,0 +1,68 @@
+Python GUI Script to Download NEXRAD Data from Amazon
+
+Script created by Alex Krull, NWS WFO Des Moines, IA
+Date Created: 20190424
+
+This script was written for Python 2.7, however, only a few
+small syntax changes would likely be needed for Python 3.x
+This script is run for Python on a Windows Machine to handle the
+syntax of Windows file path structure. 
+
+This will script will need the following Python Packages:
+nexradaws
+datetime
+pytz
+Tkinter
+
+nexradaws can easily be installed with pip install, or conda forge
+if you run an anaconda python package 
+
+Notes and Instructions: 
+
+In Windows, it is suggested to have a batch file open the
+python script. 
+
+It may take as long as 30-45 seconds for the GUI to open. 
+
+Once the GUI opens, fill out all fields.
+
+Note that all times are in UTC. 
+
+Note that in the radar ID, it must be in ALL CAPS, and you 
+must also include the K in front of the ID
+
+(For Microsoft Windows) In the Absolute File Path, you will need to even include the letter
+drive. You must have the folder/directory created prior to running the Python GUI. This script
+does not create a new directory on the fly.  
+The easiest way to ensure your absolute file path is correct, is to open a Windows Explorer 
+instance to the directory you are loading the files to. In the bar at the top, right click, and
+"copy address as text". You can then paste this in the path field of the GUI.  
+
+(For Microsoft Windows) You do not need quotation marks around the absolute path in the GUI.
+
+For folks using this on linux, go ahead and let me know of any correction that may be needed. 
+I would maybe expect an issue with the file path syntax. 
+
+Once you have all the information filled out, click download. 
+
+When complete, please use the "Quit" button on the GUI, not the X
+in the corner. If the command prompt window does not close, please 
+issue the command exit, do not click the X on the corner. 
+
+Any errors that occur should print to the command window. 
+
+If you realize that you are downloading too much data, 
+go into the command prompt window and press "CTRL C" to kill it. 
+(For example, you start in 2017 and put 2019 in the end date,
+you might want to do this. Otherwise, it will load every single
+scan over a two year period). 
+
+I have heard that changes coming to the Amazon service may make
+nexradaws break, but I believe the developer is prepared for the update.
+This script worked in December 2019 still. 
+
+This script is not designed to pull data in "real-time". It has been reported
+at times that this script will not pull in radar data if radar scan is less than
+60 hours hold. 
+
+
